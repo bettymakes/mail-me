@@ -1,0 +1,25 @@
+<h1>All my items!</h1>
+<ul>
+  <% @items.each do |item| %>
+    <li><%= item.name %> | <%= item.quantity %></li>
+  <% end %>
+</ul>
+
+<% if @item.errors.any? %>
+  <p>Couldn't save the item because:</p>
+  <ul>
+    <% @item.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @item do |f| %>
+  <div><%= f.label :name %></div>
+  <div><%= f.text_field :name, autofocus: true %></div>
+
+  <div><%= f.label :quantity %></div>
+  <div><%= f.number_field :quantity %></div>
+
+  <button>Add item</button>
+<% end %>
