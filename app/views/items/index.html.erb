@@ -1,4 +1,14 @@
 <h1>All my items!</h1>
+
+<%= form_tag email_path do %>
+  <%= email_field_tag 'email', '', placeholder: 'test@example.com' %>
+  <button>Send to me</button>
+<% end %>
+
+<% unless @items.any? %>
+  <p>No items yet!</p>
+<% end %>
+
 <ul>
   <% @items.each do |item| %>
     <li>
