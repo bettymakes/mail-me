@@ -1,0 +1,14 @@
+<h1>Your shopping list</h1>
+
+<% unless @items.any? %>
+  <p>No items yet!</p>
+<% end %>
+
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= item.name %> |
+      <%= item.quantity %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,9 @@
+Your shopping list
+
+<% unless @items.any? %>
+No items yet!
+
+<% end %>
+<% @items.each do |item| %>
+- <%= item.name %> | <%= item.quantity %>
+<% end %>
