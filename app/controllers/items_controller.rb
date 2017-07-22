@@ -11,7 +11,13 @@ class ItemsController < ApplicationController
       render :index
       return
     end
-    
+
+    redirect_to items_path
+  end
+
+  def destroy
+    Item.destroy(params[:id])
+
     redirect_to items_path
   end
 
